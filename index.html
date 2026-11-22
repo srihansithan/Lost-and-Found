@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VNR VJIET Lost &amp; Found</title>
+<style>
+:root{--navy:#102448;--navy2:#17345f;--blue:#2676e8;--blue2:#eaf2ff;--teal:#12a995;--green:#16a36b;--red:#e34f5f;--ink:#152743;--muted:#718096;--line:#e4eaf2;--bg:#f4f7fb;--white:#fff;--shadow:0 10px 30px rgba(21,44,78,.07)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 Inter,"Segoe UI",system-ui,sans-serif}button,input,textarea,select{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #9cc4ff;outline-offset:2px}
+.app-shell{min-height:100vh;display:grid;grid-template-columns:248px minmax(0,1fr)}.sidebar{background:linear-gradient(180deg,#102448,#0b1b35);color:#fff;padding:26px 18px;display:flex;flex-direction:column;min-height:100vh;position:sticky;top:0;height:100vh}.brand{display:flex;gap:12px;align-items:center;padding:0 8px 28px}.brand-mark{width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg,#5ca5ff,#1767db);display:grid;place-items:center;font-weight:900;font-size:19px;box-shadow:0 8px 20px #0b5dcc66}.brand strong{display:block;font-size:15px;letter-spacing:.2px}.brand small{color:#a9c7ef;font-size:12px}.nav-label{color:#7892b5;text-transform:uppercase;letter-spacing:1.4px;font-size:10px;font-weight:800;padding:8px 12px}.side-nav{display:grid;gap:7px}.side-nav button{width:100%;border:0;background:transparent;color:#d3def0;text-align:left;padding:11px 13px;border-radius:11px;display:flex;gap:12px;align-items:center;font-weight:600;transition:.2s}.side-nav button:hover,.side-nav button.active{background:#2676e8;color:#fff;box-shadow:0 8px 18px #0754b866}.nav-icon{width:20px;text-align:center;font-size:17px}.sidebar-note{margin-top:auto;border:1px solid #ffffff20;background:#ffffff0d;border-radius:16px;padding:16px;color:#c4d5eb;font-size:12px}.sidebar-note strong{display:block;color:white;font-size:13px;margin-bottom:4px}.main-area{min-width:0}.topbar{height:76px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 clamp(20px,4vw,48px);position:sticky;top:0;z-index:5}.crumb{color:var(--muted);font-size:13px}.crumb strong{color:var(--ink)}.user-chip{display:flex;align-items:center;gap:10px;font-weight:700;font-size:13px}.avatar{width:36px;height:36px;border-radius:50%;background:#e8f1ff;color:#1767db;display:grid;place-items:center;font-weight:800}.content{max-width:1440px;margin:auto;padding:32px clamp(20px,4vw,48px) 60px}.page-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:24px}.eyebrow{color:var(--blue);font-size:11px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase}.page-heading h1{font-size:clamp(25px,3vw,34px);line-height:1.18;margin:5px 0 7px;letter-spacing:-.8px}.page-heading p{margin:0;color:var(--muted)}.hero{background:linear-gradient(115deg,#102448 0%,#17447e 58%,#2676e8 100%);color:#fff;border-radius:22px;padding:clamp(25px,4vw,42px);display:flex;justify-content:space-between;align-items:center;gap:22px;overflow:hidden;position:relative;box-shadow:0 18px 36px #173b6b25}.hero:after{content:"";position:absolute;width:300px;height:300px;border:1px solid #ffffff20;border-radius:50%;right:7%;top:-160px;box-shadow:0 0 0 35px #ffffff08,0 0 0 75px #ffffff06}.hero-copy{position:relative;z-index:1;max-width:620px}.hero h2{font-size:clamp(28px,4vw,42px);line-height:1.12;letter-spacing:-1.2px;margin:8px 0 12px}.hero h2 span{color:#8fc2ff}.hero p{color:#d4e4f8;margin:0 0 22px;max-width:540px}.hero-art{font-size:86px;line-height:1;filter:drop-shadow(0 12px 20px #00152e55);position:relative;z-index:1;margin:0 4%}.hero-kicker{color:#a9d1ff;font-size:11px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase}.action-row{display:flex;gap:11px;flex-wrap:wrap}.btn{border:0;border-radius:10px;padding:11px 16px;font-weight:750;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:transform .15s,box-shadow .15s}.btn:hover{transform:translateY(-1px)}.btn-primary{background:var(--blue);color:#fff;box-shadow:0 7px 16px #2676e833}.btn-light{background:#fff;color:var(--navy)}.btn-outline{background:#fff;color:var(--ink);border:1px solid var(--line)}.btn-teal{background:var(--teal);color:#fff}.btn-danger{background:var(--red);color:#fff}.p,.s{border-radius:10px;padding:10px 15px;font-weight:700;margin:6px 6px 0 0}.p{background:var(--blue);color:#fff;border:0}.s{background:#fff;color:var(--ink);border:1px solid var(--line)}.stats-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:22px 0 30px}.stat-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;display:flex;align-items:center;gap:14px;box-shadow:var(--shadow)}.stat-icon{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;font-size:21px;background:#eaf2ff}.stat-card:nth-child(2) .stat-icon{background:#f1edff}.stat-card:nth-child(3) .stat-icon{background:#e7f8f0}.stat-card small{display:block;color:var(--muted);font-weight:600}.stat-card strong{font-size:25px;line-height:1.2}.section-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 14px}.section-head h2{font-size:19px;margin:0}.link-btn{border:0;background:transparent;color:var(--blue);font-weight:750}.quick-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-bottom:28px}.quick-card{border:0;text-align:left;font:inherit;cursor:pointer;border-radius:16px;padding:19px;color:#fff;display:flex;justify-content:space-between;align-items:center;min-height:104px;box-shadow:var(--shadow)}.quick-card.lost{background:linear-gradient(110deg,#276fe0,#368df6)}.quick-card.found{background:linear-gradient(110deg,#0c9e91,#19bda4)}.quick-card strong{display:block;font-size:17px}.quick-card span{font-size:13px;opacity:.88}.quick-card b{font-size:27px;opacity:.85}.items-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.item-tile{background:#fff;border:1px solid var(--line);border-radius:15px;padding:12px;box-shadow:var(--shadow);min-width:0}.item-photo{width:100%;height:125px;object-fit:cover;border-radius:10px;background:#eef2f7}.item-placeholder{height:125px;border-radius:10px;background:linear-gradient(135deg,#edf3fb,#e3eaf4);display:grid;place-items:center;font-size:42px}.item-tile h3{font-size:14px;margin:10px 0 3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.item-meta{font-size:11px;color:var(--muted);display:grid;gap:3px}.status-pill{display:inline-flex;width:max-content;padding:3px 8px;border-radius:99px;font-size:10px;font-weight:850;letter-spacing:.3px;color:#fff;background:#78869a}.status-pill.LOST{background:var(--red)}.status-pill.FOUND{background:var(--green)}.status-pill.CLAIMED{background:#68778d}.page-panel{background:#fff;border:1px solid var(--line);border-radius:18px;padding:clamp(18px,3vw,28px);box-shadow:var(--shadow);margin:12px 0}.page-panel h2{margin-top:0}.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:15px;margin:12px 0;box-shadow:0 5px 16px #173b6b0a}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 18px}.form-grid .wide{grid-column:1/-1}label{display:block;margin:12px 0 5px;font-weight:700;font-size:13px;color:#30435f}input,textarea,select{width:100%;padding:11px 12px;border:1px solid #dce4ef;border-radius:9px;font:inherit;background:#fff;color:var(--ink)}input:focus,textarea:focus,select:focus{border-color:#7fb0f7;outline:3px solid #e7f1ff}textarea{resize:vertical}.err{color:var(--red);font-size:.82rem;display:block;min-height:1.1em;font-weight:650}.row{display:flex;gap:14px;align-items:flex-start}.row>div{flex:1;min-width:0}img.th{width:96px;height:96px;object-fit:cover;border-radius:10px;flex:none;background:#edf1f6}.tag{display:inline-block;background:#eaf2ff;color:#1e62b8;font:800 .85rem ui-monospace,Consolas,monospace;padding:3px 9px;border-radius:7px}.pill{font-size:.72rem;font-weight:800;padding:3px 8px;border-radius:99px;color:#fff;background:var(--muted)}.LOST{background:var(--red)}.FOUND{background:var(--green)}.pct{font-size:1.25rem;font-weight:850;color:var(--green)}.mut{color:var(--muted);font-size:.86rem}#toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#102448;color:#fff;padding:11px 17px;border-radius:10px;display:none;z-index:20;box-shadow:var(--shadow)}.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}.toolbar>*{max-width:260px}.footer-note{text-align:center;color:var(--muted);font-size:12px;margin:28px 0 0}
+@media(max-width:1000px){.app-shell{grid-template-columns:210px minmax(0,1fr)}.items-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-art{font-size:66px;margin:0}}
+@media(max-width:700px){.app-shell{display:block}.sidebar{position:relative;height:auto;min-height:0;padding:13px 14px}.brand{padding:0 4px 12px}.nav-label,.sidebar-note{display:none}.side-nav{display:flex;overflow-x:auto;padding-bottom:3px}.side-nav button{width:auto;white-space:nowrap;padding:9px 11px;font-size:12px}.topbar{height:58px;padding:0 18px}.content{padding:22px 16px 45px}.hero{padding:24px 20px}.hero-art{display:none}.stats-grid{gap:8px}.stat-card{padding:12px;gap:8px}.stat-icon{width:34px;height:34px;font-size:16px}.stat-card strong{font-size:21px}.stat-card small{font-size:10px}.quick-grid{gap:9px}.quick-card{padding:14px;min-height:92px}.quick-card strong{font-size:14px}.items-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.page-heading{display:block}.page-heading>.btn{margin-top:12px}}
+@media(max-width:430px){.stats-grid{grid-template-columns:1fr}.stat-card{padding:13px}.form-grid{grid-template-columns:1fr}.form-grid .wide{grid-column:auto}.quick-card b{font-size:21px}}
+</style></head><body>
+<div class="app-shell">
+<aside class="sidebar">
+  <div class="brand"><div class="brand-mark">V</div><div><strong>VNR VJIET</strong><small>Lost &amp; Found Portal</small></div></div>
+  <div class="nav-label">Workspace</div>
+  <nav class="side-nav">
+    <button id="nav-home" class="active" onclick="show('home')"><span class="nav-icon">⌂</span>Overview</button>
+    <button id="nav-report" onclick="startReport('LOST')"><span class="nav-icon">＋</span>Report an item</button>
+    <button id="nav-browse" onclick="show('browse')"><span class="nav-icon">▤</span>Browse items</button>
+    <button id="nav-mine" onclick="show('mine')"><span class="nav-icon">⌕</span>My matches</button>
+    <button id="nav-admin" onclick="show('admin')"><span class="nav-icon">⚙</span>Admin</button>
+  </nav>
+  <div class="sidebar-note"><strong>Campus community</strong>Helping belongings find their way back to their owners.</div>
+</aside>
+<div class="main-area">
+  <div class="topbar"><div class="crumb">VNR VJIET <span aria-hidden="true"> / </span> <strong id="crumb-current">Overview</strong></div><div class="user-chip"><span class="avatar">V</span><span>Campus Portal</span></div></div>
+  <main class="content">
+    <section id="v-home">
+      <div class="page-heading"><div><div class="eyebrow">Campus lost &amp; found</div><h1>Good day! Let's reunite lost items.</h1><p>A simple, smart way to report, discover and recover belongings around campus.</p></div></div>
+      <div class="hero"><div class="hero-copy"><div class="hero-kicker">VNR VJIET · COMMUNITY PORTAL</div><h2>Lost something?<br><span>Let's find it.</span></h2><p>Report a missing belonging or help someone by listing an item you've found. Our smart matching system can surface possible matches.</p><div class="action-row"><button class="btn btn-light" onclick="startReport('LOST')">＋ Report lost item</button><button class="btn btn-outline" onclick="startReport('FOUND')">＋ Report found item</button></div></div><div class="hero-art" aria-hidden="true">🎒</div></div>
+      <div class="stats-grid"><div class="stat-card"><div class="stat-icon">▣</div><div><small>Open reports</small><strong id="stat-open">0</strong></div></div><div class="stat-card"><div class="stat-icon">↔</div><div><small>Possible matches</small><strong id="stat-matches">0</strong></div></div><div class="stat-card"><div class="stat-icon">✓</div><div><small>Resolved items</small><strong id="stat-resolved">0</strong></div></div></div>
+      <div class="section-head"><h2>Quick actions</h2></div>
+      <div class="quick-grid"><button class="quick-card lost" onclick="startReport('LOST')"><span><strong>Report a lost item</strong><span>Tell the campus what you're missing</span></span><b>↗</b></button><button class="quick-card found" onclick="startReport('FOUND')"><span><strong>Report a found item</strong><span>Help return something to its owner</span></span><b>↗</b></button></div>
+      <div class="section-head"><h2>Recently reported items</h2><button class="link-btn" onclick="show('browse')">View all →</button></div><div id="recent-items" class="items-grid"></div>
+      <p class="footer-note">Smart text matching powered by C + WebAssembly</p>
+    </section>
+    <section id="v-report" hidden><div class="page-heading"><div><div class="eyebrow">Submit a report</div><h1 id="rtitle"></h1><p>Share a few details so the community can help.</p></div></div><div class="page-panel"><div id="form"></div><div id="review" hidden></div><div id="result" hidden></div></div></section>
+    <section id="v-browse" hidden><div class="page-heading"><div><div class="eyebrow">Explore reports</div><h1>Browse items</h1><p>Search current lost and found reports from the campus.</p></div></div><div class="page-panel"><div class="toolbar"><input id="q" placeholder="Search name, description or place" oninput="renderBrowse()"><select id="sf" onchange="renderBrowse()"><option value="">All statuses</option><option>LOST</option><option>FOUND</option><option>CLAIMED</option></select></div><div id="blist"></div></div></section>
+    <section id="v-mine" hidden><div class="page-heading"><div><div class="eyebrow">Track your report</div><h1>Check my matches</h1><p>Enter the item ID you received when submitting your report.</p></div></div><div class="page-panel"><label for="mid">Your item ID</label><input id="mid" maxlength="9" placeholder="e.g. LF001"><small class="err" id="me"></small><button class="btn btn-primary" onclick="checkMine()">Find possible matches →</button><div id="mres"></div></div></section>
+    <section id="v-admin" hidden><div class="page-heading"><div><div class="eyebrow">Portal management</div><h1>Admin</h1><p>Review reports and manage item status.</p></div></div><div class="page-panel"></div></section>
+  </main>
+</div></div><div id="toast" role="status" aria-live="polite"></div>
+<script>
+var Module = { onRuntimeInitialized: function(){ window.lfWasmReady = true; } };
+</script>
+<script src="lf_match.js"></script>
+<script>
+/* Paste the URL of your SMS serverless function here (see sms-worker.js). Empty = SMS is only simulated. */
+const SMS_API_URL='';
+const CC='+91',MIN_SHOW=40,SMS_MIN=80;
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const get=(k,d)=>{try{return JSON.parse(localStorage.getItem(k))??d}catch{return d}};
+const put=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch{toast('Storage is full. Delete some items.')}};
+const toast=m=>{const t=$('#toast');t.textContent=m;t.style.display='block';setTimeout(()=>t.style.display='none',3500)};
+const today=()=>new Date(Date.now()-new Date().getTimezoneOffset()*6e4).toISOString().slice(0,10);
+const fmt=d=>d.split('-').reverse().join('-'),mask=p=>p.slice(0,2)+'******'+p.slice(-2);
+let items=get('lf_items',[]),isAdmin=false,cur={};
+const saveItems=()=>put('lf_items',items);
+
+/* ---------- matching: text + picture ---------- */
+const STOP=new Set('the and with has have was for from near very this that are its lost found item there which of in on at to is it as by an or'.split(' '));
+const toks=s=>[...new Set((s.toLowerCase().match(/[a-z0-9]+/g)||[]).filter(w=>!STOP.has(w)).map(w=>w.length>3&&w.endsWith('s')?w.slice(0,-1):w).filter(w=>w.length>1))];
+const ov=(a,b)=>{const m=Math.min(a.length,b.length);return m?Math.min(100,a.filter(w=>b.includes(w)).length*100/m):0};
+const textSim=(a,b)=>{
+ if(window.lfWasmReady && window.Module && typeof Module.ccall==='function'){
+  return Module.ccall('lf_similarity','number',['string','string','string','string','string','string'],[a.name||'',a.desc||'',a.loc||'',b.name||'',b.desc||'',b.loc||'']);
+ }
+ // Temporary fallback during WebAssembly startup only.
+ return Math.round((60*ov(toks(a.name),toks(b.name))+30*ov(toks(a.name+' '+a.desc),toks(b.name+' '+b.desc))+10*ov(toks(a.loc),toks(b.loc)))/100);
+};
+function feat(src){ /* dHash (shape) + colour histogram of a picture */
+ const c=document.createElement('canvas'),x=c.getContext('2d',{willReadFrequently:true});
+ c.width=9;c.height=8;x.drawImage(src,0,0,9,8);let d=x.getImageData(0,0,9,8).data,h='';
+ const g=i=>d[i]*.3+d[i+1]*.59+d[i+2]*.11;
+ for(let r=0;r<8;r++)for(let q=0;q<8;q++){const i=(r*9+q)*4;h+=g(i)>g(i+4)?'1':'0'}
+ c.width=c.height=16;x.drawImage(src,0,0,16,16);d=x.getImageData(0,0,16,16).data;
+ const hist=Array(12).fill(0);
+ for(let i=0;i<d.length;i+=4)for(let k=0;k<3;k++)hist[k*4+(d[i+k]>>6)]+=1/256;
+ return{hash:h,hist};
+}
+function imgSim(a,b){
+ let diff=0;for(let i=0;i<64;i++)if(a.hash[i]!==b.hash[i])diff++;
+ const hs=Math.max(0,(1-diff/64-.5)*2);
+ let ix=0;for(let i=0;i<12;i++)ix+=Math.min(a.hist[i],b.hist[i]);
+ const cs=Math.max(0,(ix/3-.5)*2);
+ return Math.round(100*(.6*hs+.4*cs));
+}
+function score(a,b){ /* overall % = 60% text + 40% picture (text only if a picture is missing) */
+ const t=textSim(a,b);
+ if(a.hash&&b.hash){const i=imgSim(a,b);return{t,i,p:Math.round(.6*t+.4*i)}}
+ return{t,i:null,p:t};
+}
+const opp=(a,b)=>(a.status==='LOST'&&b.status==='FOUND')||(a.status==='FOUND'&&b.status==='LOST');
+const matchesFor=it=>items.filter(o=>o.id!==it.id&&opp(it,o)).map(o=>({o,...score(it,o)})).filter(m=>m.p>=MIN_SHOW).sort((a,b)=>b.p-a.p);
+
+/* ---------- SMS ---------- */
+async function sendSMS(phone,msg){
+ let st='SIMULATED';
+ if(SMS_API_URL){try{const r=await fetch(SMS_API_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({to:CC+phone,body:msg})});st=r.ok?'SENT':'FAILED'}catch{st='FAILED'}}
+ const log=get('lf_sms',[]);log.push({t:new Date().toLocaleString(),to:CC+phone,msg,st});put('lf_sms',log.slice(-30));
+ return st;
+}
+
+/* ---------- rendering helpers ---------- */
+const thumb=it=>`<img class="th" alt="${esc(it.name)}" src="${it.photo?esc(it.photo):'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=='}">`;
+const pill=s=>`<span class="pill ${s}">${s}</span>`;
+function itemCard(it,adm){
+ return `<div class="card row">${thumb(it)}<div><span class="tag">${it.id}</span> ${pill(it.status)}<br><b>${esc(it.name)}</b><br>${esc(it.desc)}<br><span class="mut">${esc(it.loc)}, ${fmt(it.date)}. Phone ${adm?it.phone:mask(it.phone)}</span>${adm?`<br>
+<select onchange="setStatus('${it.id}',this.value)">${['LOST','FOUND','CLAIMED'].map(s=>`<option ${s===it.status?'selected':''}>${s}</option>`).join('')}</select>
+<button class="s" onclick="editItem('${it.id}')">Edit</button><button class="s" onclick="delItem('${it.id}')">Delete</button>`:''}</div></div>`;
+}
+const matchCard=m=>`<div class="card row">${thumb(m.o)}<div><span class="pct">${m.p}% match</span><br><span class="tag">${m.o.id}</span> ${pill(m.o.status)} <b>${esc(m.o.name)}</b><br><span class="mut">Text ${m.t}%${m.i!=null?', picture '+m.i+'%':', no picture to compare'}. ${esc(m.o.loc)}, ${fmt(m.o.date)}. Phone ${mask(m.o.phone)}</span></div></div>`;
+function show(v){
+ document.querySelectorAll('main.content>section').forEach(s=>s.hidden=s.id!=='v-'+v);
+ document.querySelectorAll('.side-nav button').forEach(b=>b.classList.toggle('active',b.id==='nav-'+v));
+ const labels={home:'Overview',report:'Report an item',browse:'Browse items',mine:'My matches',admin:'Admin'};
+ $('#crumb-current').textContent=labels[v]||'Overview';
+ if(v==='home')renderHome();if(v==='browse')renderBrowse();if(v==='admin')renderAdmin();
+}
+function renderHome(){
+ const open=items.filter(i=>i.status==='LOST'||i.status==='FOUND').length;
+ const resolved=items.filter(i=>i.status==='CLAIMED').length;
+ const pairs=[];items.filter(i=>i.status==='LOST').forEach(l=>items.filter(f=>f.status==='FOUND').forEach(f=>{const z=score(l,f);if(z.p>=MIN_SHOW)pairs.push(z)}));
+ $('#stat-open').textContent=open;$('#stat-matches').textContent=pairs.length;$('#stat-resolved').textContent=resolved;
+ const recent=items.slice().reverse().slice(0,4);
+ $('#recent-items').innerHTML=recent.length?recent.map(i=>`<article class="item-tile">${i.photo?`<img class="item-photo" src="${esc(i.photo)}" alt="${esc(i.name)}">`:`<div class="item-placeholder" aria-hidden="true">${i.status==='FOUND'?'🎁':'🔎'}</div>`}<span class="status-pill ${i.status}">${i.status}</span><h3>${esc(i.name)}</h3><div class="item-meta"><span>⌖ ${esc(i.loc)}</span><span>▣ ${fmt(i.date)}</span><span>ID: ${esc(i.id)}</span></div></article>`).join(''):'<div class="page-panel" style="grid-column:1/-1;text-align:center;color:var(--muted)">No reports yet. Start by reporting a lost or found item.</div>';
+}
+
+/* ---------- report form with validation ---------- */
+const F=[['name','Item name','text',49],['desc','Description','textarea',99],['loc','Where was it lost or found?','text',49],['date','Date','date'],['phone','Your phone number (10 digits)','tel',10]];
+const g=()=>Object.fromEntries(F.map(([k])=>[k,$('#f-'+k).value.trim()]));
+function startReport(type,it){
+ cur=it?{...it,editId:it.id}:{status:type,photo:'',hash:'',hist:[]};
+ show('report');$('#review').hidden=true;$('#result').hidden=true;$('#form').hidden=false;
+ $('#rtitle').textContent=it?'Edit '+it.id:'Report a '+(type==='LOST'?'lost':'found')+' item';
+ $('#form').innerHTML='<div class="form-grid">'+F.map(([k,l,t,m])=>`<div class="${k==='desc'?'wide':''}"><label for="f-${k}">${l}</label>`+(t==='textarea'?`<textarea id="f-${k}" rows="3" maxlength="${m}"></textarea>`:`<input id="f-${k}" type="${t}" ${m?`maxlength="${m}"`:''} ${t==='date'?`max="${today()}"`:''} ${t==='tel'?'inputmode="numeric"':''}>`)+`<small class="err" id="e-${k}"></small></div>`).join('')+'</div>'
+ +`<label for="f-photo">Photo (optional, helps matching)</label><input id="f-photo" type="file" accept="image/*"><small class="err" id="e-photo"></small>
+ <div class="row"><img id="pv" class="th" alt="Preview" hidden><button id="rm" class="s" hidden onclick="cur.photo='';cur.hash='';cur.hist=[];$('#f-photo').value='';setPv()">Remove photo</button></div>
+ <button class="btn btn-primary" onclick="toReview()">Review details →</button>`;
+ F.forEach(([k])=>$('#f-'+k).value=cur[k]||'');
+ $('#f-photo').onchange=onPhoto;setPv();
+}
+function setPv(){$('#pv').hidden=$('#rm').hidden=!cur.photo;if(cur.photo)$('#pv').src=cur.photo}
+const loadImg=async f=>{try{return await createImageBitmap(f)}catch{return await new Promise((ok,no)=>{const u=URL.createObjectURL(f),im=new Image();im.onload=()=>{URL.revokeObjectURL(u);ok(im)};im.onerror=no;im.src=u})}};
+async function onPhoto(e){
+ const f=e.target.files[0],er=$('#e-photo');er.textContent='';if(!f)return;
+ try{const b=await loadImg(f),w=b.naturalWidth||b.width,h=b.naturalHeight||b.height,s=Math.min(1,240/Math.max(w,h)),c=document.createElement('canvas');
+  c.width=Math.max(1,Math.round(w*s));c.height=Math.max(1,Math.round(h*s));c.getContext('2d').drawImage(b,0,0,c.width,c.height);
+  cur.photo=c.toDataURL('image/jpeg',.7);Object.assign(cur,feat(c));setPv()}
+ catch{er.textContent='ENTER CORRECTLY (this picture could not be read. Try a JPG or PNG photo)';e.target.value=''}
+}
+function val(){
+ const v=g(),bad={};
+ if(!v.name)bad.name=1;if(!v.desc)bad.desc=1;if(!v.loc)bad.loc=1;
+ if(!v.date||v.date>today())bad.date=1;
+ if(!/^\d{10}$/.test(v.phone))bad.phone=' (exactly 10 digits, numbers only)';
+ F.forEach(([k])=>$('#e-'+k).textContent=bad[k]?'ENTER CORRECTLY'+(bad[k]===1?'':bad[k]):'');
+ const first=Object.keys(bad)[0];if(first){$('#f-'+first).focus();return null}
+ return v;
+}
+function toReview(){
+ const v=val();if(!v)return;cur.draft=v;
+ $('#review').innerHTML=`<h3>Check your details</h3><div class="card row">${thumb(cur)}<div><b>${esc(v.name)}</b><br>${esc(v.desc)}<br>${esc(v.loc)}<br>${fmt(v.date)}<br>Phone ${esc(v.phone)}</div></div>
+ <button class="btn btn-outline" onclick="$('#review').hidden=true;$('#form').hidden=false">Edit details</button>
+ <button class="btn btn-primary" onclick="submitItem()">${cur.editId?'Save changes':'Submit report'}</button>
+ <button class="s" onclick="startReport(cur.status)">Cancel</button>`;
+ $('#form').hidden=true;$('#review').hidden=false;
+}
+async function submitItem(){
+ const v=cur.draft,ex={photo:cur.photo,hash:cur.hash,hist:cur.hist};let it;
+ if(cur.editId){it=items.find(x=>x.id===cur.editId);Object.assign(it,v,ex)}
+ else{const n=Math.max(0,...items.map(x=>+x.id.slice(2)))+1;it={id:'LF'+String(n).padStart(3,'0'),...v,...ex,status:cur.status};items.push(it)}
+ saveItems();
+ const ms=matchesFor(it);let sms='';
+ if(!cur.editId)for(const m of ms.filter(m=>m.p>=SMS_MIN)){
+  const a=await sendSMS(it.phone,`Lost&Found: ${m.p}% match for your item ${it.id}. Other item ${m.o.id} (${m.o.name.slice(0,20)}). Contact: ${m.o.phone}`);
+  await sendSMS(m.o.phone,`Lost&Found: ${m.p}% match for your item ${m.o.id}. Other item ${it.id} (${it.name.slice(0,20)}). Contact: ${it.phone}`);
+  sms+=`<p class="mut">SMS to both people for ${m.o.id}: ${a}</p>`;
+ }
+ $('#review').hidden=true;$('#form').hidden=true;$('#result').hidden=false;
+ $('#result').innerHTML=`<div class="card"><h3>${cur.editId?'Changes saved':'Report submitted'}</h3>Item ID: <span class="tag">${it.id}</span><br>Keep this ID to check matches later.</div>`
+ +(ms.length?`<h3>Possible matches</h3>${ms.map(matchCard).join('')}${sms}`:'<p>No matches yet. Use "Check my matches" later.</p>')
+ +`<button class="p" onclick="startReport('${it.status==='CLAIMED'?'FOUND':it.status}')">Report another</button>`;
+}
+
+/* ---------- browse and my matches ---------- */
+function renderBrowse(){
+ const q=$('#q').value.toLowerCase(),s=$('#sf').value;
+ const l=items.filter(i=>(!s||i.status===s)&&(i.name+' '+i.desc+' '+i.loc).toLowerCase().includes(q));
+ $('#blist').innerHTML=l.length?l.map(i=>itemCard(i,false)).join(''):'<p>No items found.</p>';
+}
+function checkMine(){
+ const id=$('#mid').value.trim().toUpperCase(),it=items.find(i=>i.id===id);
+ if(!/^LF\d{3,}$/.test(id)){$('#me').textContent='ENTER CORRECTLY (an ID looks like LF001)';return}
+ $('#me').textContent='';
+ if(!it){$('#mres').innerHTML='<p>No item with that ID.</p>';return}
+ const ms=matchesFor(it);
+ $('#mres').innerHTML=itemCard(it,false)+(ms.length?ms.map(matchCard).join(''):'<p>No matches yet. Check again later.</p>');
+}
+
+/* ---------- admin ---------- */
+function renderAdmin(){
+ const el=$('#v-admin');
+ if(!isAdmin){el.innerHTML=`<h2>Admin login</h2><label for="au">Username</label><input id="au"><label for="ap">Password</label><input id="ap" type="password"><small class="err" id="ae"></small><button class="p" onclick="login()">Log in</button>`;return}
+ const pairs=[];items.filter(i=>i.status==='LOST').forEach(l=>items.filter(f=>f.status==='FOUND').forEach(f=>{const s=score(l,f);if(s.p>=MIN_SHOW)pairs.push({l,f,...s})}));
+ el.innerHTML=`<h2>Admin panel</h2><button class="s" onclick="isAdmin=false;renderAdmin()">Log out</button>
+ <h3>Possible matches (${pairs.length})</h3>${pairs.map(p=>`<div class="card"><span class="pct">${p.p}%</span> ${p.l.id} ${esc(p.l.name)} and ${p.f.id} ${esc(p.f.name)}</div>`).join('')||'<p>None right now.</p>'}
+ <h3>All items (${items.length})</h3>${items.map(i=>itemCard(i,true)).join('')||'<p>No items yet.</p>'}
+ <h3>SMS log</h3>${get('lf_sms',[]).slice().reverse().slice(0,10).map(s=>`<div class="card mut">${esc(s.t)}. ${esc(s.to)} (${s.st}): ${esc(s.msg)}</div>`).join('')||'<p>No SMS yet.</p>'}
+ <h3>Change password</h3><input id="op" type="password" placeholder="Current password"><input id="np" type="password" placeholder="New password"><small class="err" id="pe"></small><button class="p" onclick="chPass()">Change password</button>`;
+}
+function login(){
+ const u=$('#au').value.trim(),p=$('#ap').value;
+ if(!u||!p){$('#ae').textContent='ENTER CORRECTLY';return}
+ if(u==='admin'&&p===get('lf_pass','admin123')){isAdmin=true;renderAdmin()}else $('#ae').textContent='Wrong username or password';
+}
+function chPass(){
+ if(!$('#np').value||$('#op').value!==get('lf_pass','admin123')){$('#pe').textContent='ENTER CORRECTLY';return}
+ put('lf_pass',$('#np').value);toast('Password changed');renderAdmin();
+}
+const setStatus=(id,s)=>{items.find(i=>i.id===id).status=s;saveItems();renderAdmin()};
+const editItem=id=>startReport(null,items.find(i=>i.id===id));
+function delItem(id){if(confirm('Delete '+id+'?')){items=items.filter(i=>i.id!==id);saveItems();renderAdmin()}}
+show('home');
+</script></body></html>
